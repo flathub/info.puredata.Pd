@@ -20,37 +20,8 @@ rename-icon: puredata
 rename-appdata-file: org.puredata.pd-gui.metainfo.xml
 rename-desktop-file: org.puredata.pd-gui.desktop
 modules:
-  - name: tcl
-    buildsystem: autotools
-    subdir: unix
-    build-options:
-      no-debuginfo: true
-    sources:
-      - type: archive
-        url: https://prdownloads.sourceforge.net/tcl/tcl8.6.13-src.tar.gz
-        sha256: 43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066
-        x-checker-data:
-          type: anitya
-          project-id: 4941
-          stable-only: true
-          url-template: https://prdownloads.sourceforge.net/tcl/tcl$version-src.tar.gz
-  - name: tk
-    buildsystem: autotools
-    subdir: unix
-    build-options:
-      no-debuginfo: true
-    post-install:
-      - test -e "${FLATPAK_DEST}/bin/wish" || find "${FLATPAK_DEST}/bin/" -name "wish*.*" -printf "%f\0${FLATPAK_DEST}/bin/wish" -quit | xargs -0 ln -s
-    sources:
-      - type: archive
-        url: https://prdownloads.sourceforge.net/tcl/tk8.6.13-src.tar.gz
-        sha256: 2e65fa069a23365440a3c56c556b8673b5e32a283800d8d9b257e3f584ce0675
-        x-checker-data:
-          type: anitya
-          project-id: 11426
-          stable-only: true
-          url-template: https://prdownloads.sourceforge.net/tcl/tk$version-src.tar.gz
-
+  - modules/tcl.json
+  - modules/tk.json
   - name: puredata
     buildsystem: autotools
     config-opts:
