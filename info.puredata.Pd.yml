@@ -25,7 +25,9 @@ modules:
   - name: pd64
     buildsystem: autotools
     config-opts:
-      - --enable-jack --floatsize=64 --program-transform-name='s/pd$/pd64/'
+      - --enable-jack
+      - --with-floatsize=64
+      - --program-transform-name='s/pd$/pd64/'
     post-install:
       - appstream-util modify "${FLATPAK_DEST}/share/metainfo/org.puredata.pd-gui.metainfo.xml" id "${FLATPAK_ID}"
     sources:
