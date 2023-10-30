@@ -30,7 +30,6 @@ See the [Flatpak manual](http://docs.flatpak.org/en/latest/) for more informatio
 
 There's no formalized way to update the versions, but something along these lines should work:
 
-
 ```bash
 cd ${PDREPODIR}/linux
 echo "<releases>" > releases.xml
@@ -44,3 +43,5 @@ git checkout org.puredata.pd.metainfo.xml
 rm relases.xml
 cd -
 ```
+
+The script `update-metainfo-patch.sh` should do this for you.
