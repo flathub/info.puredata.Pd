@@ -29,15 +29,16 @@ modules:
       - --with-floatsize=64
       - --program-transform-name='s/pd$/pd64/'
     post-install:
-      - appstream-util modify "${FLATPAK_DEST}/share/metainfo/org.puredata.pd-gui.metainfo.xml" id "${FLATPAK_ID}"
+      - appstream-util modify "${FLATPAK_DEST}/share/metainfo/org.puredata.pd-gui.metainfo.xml"
+        id "${FLATPAK_ID}"
     sources:
       - type: git
         url: https://github.com/pure-data/pure-data.git
-        tag: 0.54-0
-        commit: c0a7c16c63e86ccc8ce05c8273ccd8aec7ae044c
+        tag: 0.54-1
+        commit: 0259d00373b9e6f3bc1d76eebc5b243283ca7063
         x-checker-data:
           type: git
-          tag-pattern: "^([\\d.]+-[\\d]+)$"
+          tag-pattern: ^([\d.]+-[\d]+)$
           is-main-source: true
       - type: patch
         path: patches/metainfo.patch
@@ -46,15 +47,16 @@ modules:
     config-opts:
       - --enable-jack
     post-install:
-      - appstream-util modify "${FLATPAK_DEST}/share/metainfo/org.puredata.pd-gui.metainfo.xml" id "${FLATPAK_ID}"
+      - appstream-util modify "${FLATPAK_DEST}/share/metainfo/org.puredata.pd-gui.metainfo.xml"
+        id "${FLATPAK_ID}"
     sources:
       - type: git
         url: https://github.com/pure-data/pure-data.git
-        tag: 0.54-0
-        commit: c0a7c16c63e86ccc8ce05c8273ccd8aec7ae044c
+        tag: 0.54-1
+        commit: 0259d00373b9e6f3bc1d76eebc5b243283ca7063
         x-checker-data:
           type: git
-          tag-pattern: "^([\\d.]+-[\\d]+)$"
+          tag-pattern: ^([\d.]+-[\d]+)$
           is-main-source: true
       - type: patch
         path: patches/metainfo.patch
