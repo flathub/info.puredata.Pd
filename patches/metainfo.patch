@@ -1,12 +1,13 @@
 diff --git a/linux/org.puredata.pd-gui.metainfo.xml b/linux/org.puredata.pd-gui.metainfo.xml
-index 47c616ca..249ae931 100644
+index 47c616ca..65e28104 100644
 --- a/linux/org.puredata.pd-gui.metainfo.xml
 +++ b/linux/org.puredata.pd-gui.metainfo.xml
-@@ -30,4 +30,52 @@
+@@ -30,4 +30,53 @@
      </screenshot>
    </screenshots>
    <content_rating type="oars-1.0"/>
 +  <releases>
++    <release version="0.54-1" date="2023-10-30"/>
 +    <release version="0.54-0" date="2023-07-03"/>
 +    <release version="0.53-2" date="2023-03-01"/>
 +    <release version="0.53-1" date="2022-12-12"/>
