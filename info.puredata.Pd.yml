@@ -28,9 +28,6 @@ modules:
       - --enable-jack
       - --with-floatsize=64
       - --program-transform-name='s/pd$/pd64/'
-    post-install:
-      - appstream-util modify "${FLATPAK_DEST}/share/metainfo/org.puredata.pd-gui.metainfo.xml"
-        id "${FLATPAK_ID}"
     sources:
       - type: git
         url: https://github.com/pure-data/pure-data.git
@@ -46,9 +43,6 @@ modules:
     buildsystem: autotools
     config-opts:
       - --enable-jack
-    post-install:
-      - appstream-util modify "${FLATPAK_DEST}/share/metainfo/org.puredata.pd-gui.metainfo.xml"
-        id "${FLATPAK_ID}"
     sources:
       - type: git
         url: https://github.com/pure-data/pure-data.git
