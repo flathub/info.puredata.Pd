@@ -31,8 +31,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/pure-data/pure-data.git
-        tag: 0.55-0
-        commit: 14d8b9702db5ff2e448a600f4e32e998271dbd8a
+        tag: 0.55-1
+        commit: e586b3afd2dbfd6e24d503fabe822fbd4e0cbe6b
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+-[\d]+)$
@@ -46,8 +46,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/pure-data/pure-data.git
-        tag: 0.55-0
-        commit: 14d8b9702db5ff2e448a600f4e32e998271dbd8a
+        tag: 0.55-1
+        commit: e586b3afd2dbfd6e24d503fabe822fbd4e0cbe6b
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+-[\d]+)$
