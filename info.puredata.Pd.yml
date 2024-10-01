@@ -20,6 +20,8 @@ rename-icon: puredata
 rename-appdata-file: org.puredata.pd-gui.metainfo.xml
 rename-desktop-file: org.puredata.pd-gui.desktop
 modules:
+  - modules/tcl.json
+  - modules/tk.json
   - name: pd64
     buildsystem: autotools
     config-opts:
