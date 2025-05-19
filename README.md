@@ -11,7 +11,7 @@ This is the "vanilla" flavour of Pd.
 
 
 This Flatpak uses the standard
-[flatpak-builder](docs.flatpak.org/en/latest/flatpak-builder-command-reference.html)
+[flatpak-builder](https://docs.flatpak.org/en/latest/flatpak-builder-command-reference.html)
 tool to build.
 
 You can run a command like the following to build the package from this repo
