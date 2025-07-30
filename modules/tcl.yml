@@ -3,6 +3,9 @@ buildsystem: autotools
 subdir: unix
 build-options:
   no-debuginfo: true
+config-opts:
+  # the buildprocess strips the libraries, which removes any embedded zipfiles...
+  - --disable-zipfs
 post-install:
   - find ${FLATPAK_DEST}/lib -exec chmod -v u+wX {} +
 sources:
