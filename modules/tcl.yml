@@ -1,0 +1,17 @@
+build-options:
+  no-debuginfo: true
+buildsystem: autotools
+name: tcl
+post-install:
+- echo tcl post-install
+- find ${FLATPAK_DEST}/lib -type f -name '*.so' -exec chmod -v u+w {} +
+sources:
+- sha256: e074c6a8d9ba2cddf914ba97b6677a552d7a52a3ca102924389a05ccb249b520
+  type: archive
+  url: https://prdownloads.sourceforge.net/tcl/tcl9.0.2-src.tar.gz
+  x-checker-data:
+    project-id: 4941
+    stable-only: true
+    type: anitya
+    url-template: https://prdownloads.sourceforge.net/tcl/tcl$version-src.tar.gz
+subdir: unix
