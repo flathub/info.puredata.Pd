@@ -1,8 +1,14 @@
 diff --git a/linux/org.puredata.pd-gui.metainfo.xml b/linux/org.puredata.pd-gui.metainfo.xml
-index b1b5d1b5..f346a8ef 100644
+index b1b5d1b5..660990ee 100644
 --- a/linux/org.puredata.pd-gui.metainfo.xml
 +++ b/linux/org.puredata.pd-gui.metainfo.xml
-@@ -36,4 +36,56 @@
+@@ -31,9 +31,61 @@
+   <launchable type="desktop-id">org.puredata.pd-gui.desktop</launchable>
+   <screenshots>
+     <screenshot type="default">
+-      <image>https://screenshots.debian.net/shrine/screenshot/12081/simage/large-f07fad807ae33903b32a38d2c7cedd66.png</image>
++      <image>https://upload.wikimedia.org/wikipedia/commons/f/f8/Pure_Data_with_many_patches_open_%28showing_netpd_project%29.png</image>
+       <caption>Pure Data with many patches open (netpd project)</caption>
      </screenshot>
    </screenshots>
    <content_rating type="oars-1.0"/>
