@@ -17,9 +17,6 @@
                 "type": "anitya",
                 "project-id": 11426,
                 "stable-only": true,
-                "versions": {
-                    "<": "9"
-                },
                 "url-template": "https://prdownloads.sourceforge.net/tcl/tk$version-src.tar.gz"
             }
         }
