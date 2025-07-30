@@ -54,3 +54,7 @@ modules:
           is-main-source: true
       - type: patch
         path: patches/metainfo.patch
+  - name: wish
+    buildsystem: simple
+    build-commands:
+      - test -x "${FLATPAK_DEST}/bin/wish" || IFS=:; find ${PATH} -maxdepth 1 -name "wish*.*" -print0 | sort -zVr | head -z -n1 | sed -e "s|$|${FLATPAK_DEST}/bin/wish|" | xargs -t -r0 ln -sv
