@@ -5,6 +5,10 @@
     "build-options": {
         "no-debuginfo": true
     },
+    "post-install": [
+        "echo tcl post-install",
+        "find ${FLATPAK_DEST}/lib -type f -name '*.so' -exec chmod u+w {} +"
+    ],
     "sources": [
         {
             "type": "archive",
