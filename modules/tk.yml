@@ -1,7 +1,8 @@
+name: tk
+buildsystem: autotools
+subdir: unix
 build-options:
   no-debuginfo: true
-buildsystem: autotools
-name: tk
 post-install:
 - echo tk post-install
 - find ${FLATPAK_DEST}/lib -type f -name '*.so' -exec chmod -v u+w {} +
@@ -14,4 +15,3 @@ sources:
     stable-only: true
     type: anitya
     url-template: https://prdownloads.sourceforge.net/tcl/tk$version-src.tar.gz
-subdir: unix
