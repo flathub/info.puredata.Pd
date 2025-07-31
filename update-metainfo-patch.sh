@@ -4,7 +4,7 @@ PDREPODIR="$1"
 PDFLATPAKDIR="$(dirname $(realpath "$0"))"
 
 oldimgurl="https://screenshots.debian.net/shrine/screenshot/12081/simage/large-f07fad807ae33903b32a38d2c7cedd66.png"
-newimgurl="https://upload.wikimedia.org/wikipedia/commons/f/f8/Pure_Data_with_many_patches_open_%28showing_netpd_project%29.png"
+newimgurl="https://screenshots.debian.net/screenshot/puredata"
 
 usage() {
 cat >/dev/stderr <<EOF
