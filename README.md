@@ -23,7 +23,7 @@ During development you can also run a build without installing it, like this:
 
     flatpak-builder --run build info.puredata.Pd.yml pd
 
-See the [Flatpak manual](http://docs.flatpak.org/en/latest/) for more information.
+See the [Flatpak manual](https://docs.flatpak.org/en/latest/) for more information.
 
 
 # Version update process
