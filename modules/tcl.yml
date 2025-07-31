@@ -17,5 +17,3 @@ sources:
     stable-only: true
     type: anitya
     url-template: https://prdownloads.sourceforge.net/tcl/tcl$version-src.tar.gz
-    versions:
-      <: '9'
