@@ -60,3 +60,4 @@ modules:
       - test -x "${FLATPAK_DEST}/bin/wish" || IFS=:; find ${PATH} -maxdepth 1 -name
         "wish*.*" -printf "%f %p\0" | sort -zVr | head -z -n1 | sed -e 's|^[^ ]* ||'
         -e "s|$|${FLATPAK_DEST}/bin/wish|" | xargs -t -r0 ln -sv
+  - modules/releasenotes.yml
