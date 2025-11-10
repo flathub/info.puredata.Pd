@@ -1,0 +1,32 @@
+name: releasenotes
+buildsystem: simple
+build-commands:
+- pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+  --target=pydeps "beautifulsoup4" "lxml" --no-build-isolation
+- git for-each-ref --sort=creatordate --format '%(refname) %(creatordate:short)' refs/tags | sort -Vr | sed -e 's|^refs/tags/||' > tagdates.txt
+- PYTHONPATH=pydeps ./update-metainfo.py doc/1.manual/resources/chapter5.htm tagdates.txt linux/org.puredata.pd-gui.metainfo.xml
+- install -D metadata.xml ${FLATPAK_DEST:-/app}/share/metainfo/org.puredata.pd-gui.metainfo.xml
+sources:
+- type: file
+  path: ../update-metainfo.py
+- type: git
+  url: https://github.com/pure-data/pure-data.git
+  disable-shallow-clone: true
+  tag: 0.56-1
+  commit: e3943608ab65d3e28f0a6b9f8a6f61de81fb1095
+  x-checker-data:
+    type: git
+    tag-pattern: ^([\d.]+-[\d]+)$
+    is-main-source: true
+- sha256: 5ef6fa3a8cbece8488d66985560f97ed091e22bbc4e9c2338508a9d5de6d4515
+  type: file
+  url: https://files.pythonhosted.org/packages/94/fe/3aed5d0be4d404d12d36ab97e2f1791424d9ca39c2f754a6285d59a3b01d/beautifulsoup4-4.14.2-py3-none-any.whl
+- sha256: 0cc76456a30e20f5d7f2e14a98a4ae2ee4e5abdc7c5ea0aafe795f344bc7984c
+  type: file
+  url: https://files.pythonhosted.org/packages/14/a0/bb38d3b76b8cae341dad93a2dd83ab7462e6dbcdd84d43f54ee60a8dc167/soupsieve-2.8-py3-none-any.whl
+- sha256: f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548
+  type: file
+  url: https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl
+- sha256: cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62
+  type: file
+  url: https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz
