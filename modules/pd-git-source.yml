@@ -1,0 +1,8 @@
+type: git
+url: https://github.com/pure-data/pure-data.git
+tag: 0.56-2
+commit: b1ff370c87b579f80130a9cafbf27cd890e90882
+x-checker-data:
+  type: git
+  tag-pattern: ^([\d.]+-[\d]+)$
+  is-main-source: true
