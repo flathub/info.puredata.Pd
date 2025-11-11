@@ -24,12 +24,14 @@ def extractReleaseNotes(filename):
             result[ID] = section.contents[1:]
     return result
 
+
 def getTagDates(filename):
-    pat=re.compile(r"^[0-9]+\.[0-9]+-[0-9]+$")
+    pat = re.compile(r"^[0-9]+\.[0-9]+-[0-9]+$")
     with open(filename) as f:
-        tagdates=f.readlines()
+        tagdates = f.readlines()
     tagdates = [_.split() for _ in tagdates]
     return {k: v for k, v in tagdates if pat.match(k)}
+
 
 def getMetainfo(filename):
     try:
@@ -39,6 +41,7 @@ def getMetainfo(filename):
         log.fatal(f"{filename}: {e}")
         return
     return soup
+
 
 def insertReleaseNotes(metainfo, relnotes, tagdates={}):
     # <releases>
@@ -70,13 +73,15 @@ def insertReleaseNotes(metainfo, relnotes, tagdates={}):
 
     return metainfo
 
+
 def writeMetainfo(metainfo, filename):
     with open(filename, "w") as f:
         f.write(str(metainfo))
-    
+
 
 def parseArgs():
     import argparse
+
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
@@ -92,12 +97,13 @@ def parseArgs():
     parser.add_argument(
         "metainfo",
         default="linux/org.puredata.pd-gui.metainfo.xml",
-        help="metainfo to udpate (e.g. %(default)r)"
+        help="metainfo to udpate (e.g. %(default)r)",
     )
 
     args = parser.parse_args()
 
     return args
+
 
 def _main():
     args = parseArgs()
@@ -105,9 +111,10 @@ def _main():
     relnotes = extractReleaseNotes(args.releasenotes)
     metainfo = getMetainfo(args.metainfo)
     tagdates = getTagDates(args.tagdates)
-    
+
     meta2 = insertReleaseNotes(metainfo=metainfo, relnotes=relnotes, tagdates=tagdates)
     writeMetainfo(meta2, "metadata.xml")
+
 
 if __name__ == "__main__":
     _main()
