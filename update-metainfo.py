@@ -9,6 +9,24 @@ from bs4.element import Tag
 log = logging.getLogger()
 logging.basicConfig()
 
+
+def flatten_tags(soup, tag="p", recursive=True):
+    try:
+        tags = soup.find_all(tag, recursive=False)
+    except AttributeError as e:
+        return soup
+    if not tags:
+        if recursive:
+            for s in soup:
+                flatten_tags(s, tag)
+        return soup
+    for s in tags:
+        for t in s.find_all(tag):
+            t = t.extract()
+            soup.append(t)
+    return soup
+
+
 def extractReleaseNotes(filename):
     try:
         with open(filename) as f:
@@ -21,7 +39,10 @@ def extractReleaseNotes(filename):
     for section in soup.body.find_all("section", class_="releasenote"):
         for h in section.find_all("h4"):
             ID = h.get("id").strip()
-            result[ID] = section.contents[1:]
+            flattened = flatten_tags(section)
+            for div in flattened.find_all("div"):
+                div.name = "description"
+            result[ID] = flatten_tags(flattened.contents[1:])
     return result
 
 
