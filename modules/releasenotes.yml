@@ -11,9 +11,9 @@ sources:
   path: ../update-metainfo.py
 - type: git
   url: https://github.com/pure-data/pure-data.git
+  tag: 0.56-2
+  commit: b1ff370c87b579f80130a9cafbf27cd890e90882
   disable-shallow-clone: true
-  tag: 0.56-1
-  commit: e3943608ab65d3e28f0a6b9f8a6f61de81fb1095
   x-checker-data:
     type: git
     tag-pattern: ^([\d.]+-[\d]+)$
