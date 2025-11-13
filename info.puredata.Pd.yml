@@ -22,6 +22,7 @@ rename-desktop-file: org.puredata.pd-gui.desktop
 modules:
   - modules/tcl.yml
   - modules/tk.yml
+  - modules/tcltls.yml
   - name: pd64
     buildsystem: autotools
     config-opts:
