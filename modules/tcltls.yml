@@ -1,0 +1,8 @@
+name: tcltls
+buildsystem: autotools
+build-options:
+  no-debuginfo: true
+sources:
+  - type: archive
+    url: https://core.tcl-lang.org/tcltls/uv/tcltls-2.0b2.tar.gz
+    sha256: 0f91d0f423c8053a7086f3d9bd541535caf323d155dfb3d44bcd211f00a841c8
