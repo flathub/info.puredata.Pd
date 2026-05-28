@@ -105,20 +105,21 @@ def parseArgs():
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument(
+    p = parser.add_argument_group("input")
+    p.add_argument(
         "releasenotes",
         default="doc/1.manual/5.current.status.htm",
         help="releasenotes (e.g. %(default)r) to read",
     )
-    parser.add_argument(
+    p.add_argument(
         "tagdates",
         default="tagdates.txt",
         help="tag/dates mapping file (e.g. %(default)r) to read",
     )
-    parser.add_argument(
+    p.add_argument(
         "metainfo",
         default="linux/org.puredata.pd-gui.metainfo.xml",
-        help="metainfo to udpate (e.g. %(default)r)",
+        help="metainfo to use as template (e.g. %(default)r)",
     )
 
     args = parser.parse_args()
