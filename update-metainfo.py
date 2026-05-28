@@ -105,6 +105,22 @@ def parseArgs():
 
     parser = argparse.ArgumentParser()
 
+    p = parser.add_argument_group("logging")
+    p.add_argument(
+        "-q",
+        "--quiet",
+        action="count",
+        default=0,
+        help="lower verbosity",
+    )
+    p.add_argument(
+        "-v",
+        "--verbose",
+        action="count",
+        default=0,
+        help="raise verbosity",
+    )
+
     p = parser.add_argument_group("input")
     p.add_argument(
         "releasenotes",
@@ -123,6 +139,11 @@ def parseArgs():
     )
 
     args = parser.parse_args()
+
+    args.verbosity = args.verbose - args.quiet
+    del args.verbose
+    del args.quiet
+    log.setLevel(logging.WARNING - (10 * args.verbosity))
 
     return args
 
