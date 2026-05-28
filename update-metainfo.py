@@ -121,6 +121,14 @@ def parseArgs():
         help="raise verbosity",
     )
 
+    p = parser.add_argument_group("output")
+    p.add_argument(
+        "-o",
+        "--output",
+        default="metadata.xml",
+        help="file to write (e.g. %(default)r)",
+    )
+
     p = parser.add_argument_group("input")
     p.add_argument(
         "releasenotes",
@@ -156,7 +164,7 @@ def _main():
     tagdates = getTagDates(args.tagdates)
 
     meta2 = insertReleaseNotes(metainfo=metainfo, relnotes=relnotes, tagdates=tagdates)
-    writeMetainfo(meta2, "metadata.xml")
+    writeMetainfo(meta2, args.output)
 
 
 if __name__ == "__main__":
