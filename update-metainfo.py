@@ -107,7 +107,7 @@ def parseArgs():
 
     parser.add_argument(
         "releasenotes",
-        default="doc/1.manual/resources/chapter5.htm",
+        default="doc/1.manual/5.current.status.htm",
         help="releasenotes (e.g. %(default)r) to read",
     )
     parser.add_argument(
