@@ -140,6 +140,11 @@ def parseArgs():
         default="metadata.xml",
         help="file to write (e.g. %(default)r)",
     )
+    p.add_argument(
+        "--prettify",
+        action="store_true",
+        help="prettify output (might break XML validator!)",
+    )
 
     p = parser.add_argument_group("input")
     p.add_argument(
@@ -176,7 +181,7 @@ def _main():
     tagdates = getTagDates(args.tagdates)
 
     meta2 = insertReleaseNotes(metainfo=metainfo, relnotes=relnotes, tagdates=tagdates)
-    writeMetainfo(meta2, args.output)
+    writeMetainfo(meta2, args.output, pretty=args.prettify)
 
 
 if __name__ == "__main__":
