@@ -39,7 +39,7 @@ def remove_empty_tags(soup):
 def extractReleaseNotes(filename):
     try:
         with open(filename) as f:
-            soup = BeautifulSoup(f.read(), "html.parser")
+            soup = BeautifulSoup(f.read(), "lxml")
     except Exception as e:
         log.fatal(f"{filename}: {e}")
         return
