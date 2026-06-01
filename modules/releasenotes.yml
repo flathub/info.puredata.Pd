@@ -4,7 +4,8 @@ build-commands:
 - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
   --target=pydeps "beautifulsoup4" "lxml" --no-build-isolation
 - git for-each-ref --sort=creatordate --format '%(refname) %(creatordate:short)' refs/tags | sort -Vr | sed -e 's|^refs/tags/||' > tagdates.txt
-- PYTHONPATH=pydeps ./update-metainfo.py doc/1.manual/5.current.status.htm tagdates.txt linux/org.puredata.pd-gui.metainfo.xml
+- sed -e 's|^<section|</div></section><section|' doc/1.manual/5.current.status.htm > releasenotes.htm
+- PYTHONPATH=pydeps ./update-metainfo.py releasenotes.htm tagdates.txt linux/org.puredata.pd-gui.metainfo.xml
 - install -D metadata.xml ${FLATPAK_DEST:-/app}/share/metainfo/org.puredata.pd-gui.metainfo.xml
 sources:
 - type: file
