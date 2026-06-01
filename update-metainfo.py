@@ -45,6 +45,12 @@ def extractReleaseNotes(filename):
         return
 
     result = {}
+
+    # remove all empty tags
+    for section in soup.body.find_all("section", class_="releasenote"):
+        remove_empty_tags(section)
+
+    # mangle release-notes
     for section in soup.body.find_all("section", class_="releasenote"):
         for h in section.find_all("h4"):
             ID = h.get("id").strip()
