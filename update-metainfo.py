@@ -95,9 +95,12 @@ def insertReleaseNotes(metainfo, relnotes, tagdates={}):
     return metainfo
 
 
-def writeMetainfo(metainfo, filename):
+def writeMetainfo(metainfo, filename, pretty=True):
     with open(filename, "w") as f:
-        f.write(metainfo.prettify())
+        if pretty:
+           f.write(metainfo.prettify())
+        else:
+           f.write(str(metainfo))
 
 
 def parseArgs():
