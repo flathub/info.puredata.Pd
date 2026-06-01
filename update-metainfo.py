@@ -27,6 +27,15 @@ def flatten_tags(soup, tag="p", recursive=True):
     return soup
 
 
+def remove_empty_tags(soup):
+    """remmoves all tags with no text-content"""
+    # beware, this will remove self-closing tags like <br/> and <img src="foo.jpg"/>
+    for x in soup.find_all():
+        if len(x.get_text(strip=True)) == 0:
+            x.extract()
+
+    return soup
+
 def extractReleaseNotes(filename):
     try:
         with open(filename) as f:
