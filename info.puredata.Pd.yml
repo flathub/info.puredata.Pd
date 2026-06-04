@@ -37,6 +37,8 @@ modules:
       - --enable-jack
     sources:
       - modules/pd-git-source.yml
+      - type: patch
+        path: patches/deken-tls.patch
   - name: wish
     buildsystem: simple
     build-commands:
