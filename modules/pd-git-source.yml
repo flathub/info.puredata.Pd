@@ -1,7 +1,7 @@
 type: git
 url: https://github.com/pure-data/pure-data.git
-tag: 0.56-3
-commit: 44bb5e0f4a4d42607076b557c7dad29b8e1964f6
+tag: 0.56-4
+commit: 153df0da0b5c803b7b0dbbed546782a943b25ceb
 x-checker-data:
   type: git
   tag-pattern: ^([\d.]+-[\d]+)$
