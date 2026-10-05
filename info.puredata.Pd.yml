@@ -17,8 +17,6 @@ finish-args:
 # Display, MIDI, webcams, controllers,...
   - --device=all
 rename-icon: puredata
-rename-appdata-file: org.puredata.pd-gui.metainfo.xml
-rename-desktop-file: org.puredata.pd-gui.desktop
 modules:
   - modules/tcl.yml
   - modules/tk.yml
